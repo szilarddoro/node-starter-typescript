@@ -1,0 +1,8 @@
+version: '3.5'
+services:
+  node-starter-typescript:
+    container_name: node-starter-typescript-container
+    restart: always
+    build: .
+    ports:
+      - 4500:3000
