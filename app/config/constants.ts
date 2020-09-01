@@ -1,5 +1,5 @@
 const constants = {
-    PORT: 3000
+    PORT: 8080
 }
 
 export default constants
