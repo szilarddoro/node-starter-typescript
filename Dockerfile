@@ -4,14 +4,16 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
+COPY yarn.lock ./
+
+RUN yarn install
 
 COPY . .
 
 COPY tsconfig.json ./
 
-RUN npm run tsc
+RUN yarn tsc
 
-EXPOSE 4500
+EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

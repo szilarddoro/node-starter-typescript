@@ -11,8 +11,8 @@
         "url": "https://github.com/szilarddoro/node-starter-typescript/issues"
     },
     "scripts": {
-        "start": "tsnd --respawn --transpile-only ./app",
-        "start:prod": "nodemon ./build/index.js",
+        "start": "nodemon ./build/index.js",
+        "start:dev": "tsnd --respawn --transpile-only ./app",
         "tsc": "tsc --build tsconfig.json",
         "build": "tsc && npm start",
         "test": "jest --watch"
