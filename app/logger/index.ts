@@ -17,7 +17,16 @@ const logger = createLogger({
         }),
         new transports.Console({
             level: process.env.NODE_ENV === 'production' ? 'error' : 'debug',
-            handleExceptions: true
+            handleExceptions: true,
+            format: format.combine(
+                format.splat(),
+                format.simple(),
+                format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+                format.printf(
+                    info => `[${info.timestamp}] [${info.level.toUpperCase()}] ${info.message}`
+                ),
+                format.colorize({ all: true })
+            )
         })
     ],
 
