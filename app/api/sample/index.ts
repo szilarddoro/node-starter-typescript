@@ -1,5 +1,4 @@
 import express from 'express'
-
 import { getSampleData, getSampleDataById } from './controller'
 
 const router = express.Router()

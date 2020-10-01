@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-
 import { findAllSampleData, findSampleDataById } from './service'
 
 const getSampleData = (_: Request, res: Response) => {
