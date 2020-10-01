@@ -25,16 +25,17 @@
     "dependencies": {
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
+        "dot-prop": ">=4.2.1",
         "express": "^4.17.1",
         "express-fileupload": "^1.1.9",
         "fs": "0.0.1-security",
+        "kind-of": ">=6.0.3",
         "lodash.flatten": "^4.4.0",
+        "minimist": ">=1.2.3",
         "morgan": "^1.9.1",
         "typescript": "^3.6.4",
         "winston": "^3.2.1",
-        "dot-prop": ">=4.2.1",
-        "minimist": ">=1.2.3",
-        "kind-of": ">=6.0.3"
+        "winston-daily-rotate-file": "^4.5.0"
     },
     "devDependencies": {
         "@types/body-parser": "^1.17.1",

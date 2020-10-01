@@ -1,4 +1,5 @@
-import { createLogger, transports, format } from 'winston'
+import { createLogger, format, transports } from 'winston'
+import DailyRotateFile from 'winston-daily-rotate-file'
 
 const logger = createLogger({
     format: format.combine(
@@ -27,6 +28,14 @@ const logger = createLogger({
                 ),
                 format.colorize({ all: true })
             )
+        }),
+        new DailyRotateFile({
+            filename: './logs/application-%DATE%.log',
+            datePattern: 'YYYY-MM-DD',
+            zippedArchive: true,
+            maxSize: '20m',
+            maxFiles: '14d',
+            format: format.json()
         })
     ],
 
