@@ -12,7 +12,7 @@
     },
     "scripts": {
         "start": "nodemon ./build/index.js",
-        "start:dev": "tsnd --respawn --transpile-only src",
+        "start:dev": "tsnd --respawn --transpile-only ./src",
         "tsc": "tsc --build tsconfig.json",
         "build": "tsc && npm start",
         "test": "jest --watch",
