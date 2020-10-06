@@ -10,6 +10,6 @@ const findAllSampleData = () => sampleData
  *
  * @param id - Identifier
  */
-const findSampleDataById = (id: number) => sampleData.find(data => data.id === id)
+const findSampleDataById = (id: number) => sampleData.find((data) => data.id === id)
 
 export { findAllSampleData, findSampleDataById }

@@ -5,7 +5,6 @@
  * @param end - Limit end
  * @returns Random number between limits
  */
-const getRandomValue = (start: number, end: number) =>
-    Math.floor(Math.random() * (end - start + 1)) + start
+const getRandomValue = (start: number, end: number) => Math.floor(Math.random() * (end - start + 1)) + start
 
 export { getRandomValue }
