@@ -2,7 +2,7 @@
     "name": "node-starter-typescript",
     "version": "1.0.0",
     "description": "A simple starter Node project with TypeScript included",
-    "main": "app/index.ts",
+    "main": "src/index.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/szilarddoro/node-starter-typescript"
@@ -12,11 +12,11 @@
     },
     "scripts": {
         "start": "nodemon ./build/index.js",
-        "start:dev": "tsnd --respawn --transpile-only ./app",
+        "start:dev": "tsnd --respawn --transpile-only src",
         "tsc": "tsc --build tsconfig.json",
         "build": "tsc && npm start",
         "test": "jest --watch",
-        "lint": "eslint app/**/*.ts --quiet"
+        "lint": "eslint **/src/**/*.ts --quiet"
     },
     "keywords": [
         "node"

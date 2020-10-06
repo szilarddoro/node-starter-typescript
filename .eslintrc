@@ -26,6 +26,7 @@
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
+    "ignorePatterns": ["**/src/**/*.test.ts"],
     "rules": {
         "linebreak-style": "off",
         "import/prefer-default-export": "warn",
