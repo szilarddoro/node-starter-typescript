@@ -10,9 +10,7 @@ const app = express()
 
 app.use(cors())
 app.use(morgan('combined', { stream: { write: logger.info.bind(logger) } }))
-app.use(
-    fileUpload({ limits: { fileSize: 50 * 1024 * 1024 }, useTempFiles: true, tempFileDir: '/tmp/' })
-)
+app.use(fileUpload({ limits: { fileSize: 50 * 1024 * 1024 }, useTempFiles: true, tempFileDir: '/tmp/' }))
 app.use(bodyParser.json({ limit: '50mb' }))
 
 app.use('/api', sampleApi)

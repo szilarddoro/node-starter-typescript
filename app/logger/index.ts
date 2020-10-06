@@ -2,11 +2,7 @@ import { createLogger, format, transports } from 'winston'
 import DailyRotateFile from 'winston-daily-rotate-file'
 
 const logger = createLogger({
-    format: format.combine(
-        format.splat(),
-        format.simple(),
-        format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' })
-    ),
+    format: format.combine(format.splat(), format.simple(), format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' })),
     transports: [
         new transports.File({
             filename: `./logs/application-info.log`,
@@ -14,7 +10,7 @@ const logger = createLogger({
             handleExceptions: true,
             maxsize: 5242880, // 5 MB
             maxFiles: 1,
-            format: format.json()
+            format: format.json(),
         }),
         new transports.Console({
             level: process.env.NODE_ENV === 'production' ? 'error' : 'debug',
@@ -23,11 +19,9 @@ const logger = createLogger({
                 format.splat(),
                 format.simple(),
                 format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-                format.printf(
-                    info => `[${info.timestamp}] [${info.level.toUpperCase()}] ${info.message}`
-                ),
-                format.colorize({ all: true })
-            )
+                format.printf((info) => `[${info.timestamp}] [${info.level.toUpperCase()}] ${info.message}`),
+                format.colorize({ all: true }),
+            ),
         }),
         new DailyRotateFile({
             filename: './logs/application-%DATE%.log',
@@ -35,11 +29,11 @@ const logger = createLogger({
             zippedArchive: true,
             maxSize: '20m',
             maxFiles: '14d',
-            format: format.json()
-        })
+            format: format.json(),
+        }),
     ],
 
-    exitOnError: false
+    exitOnError: false,
 })
 
 export default logger
